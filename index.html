@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<h1 style="text-align:center; text-shadow: 2px 2px 5px grey; box-shadow: 10px 10px 5px grey">RXT application triage Folio </h1>
+<title>LabWeek2023.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+<div class="w3-sidebar w3-bar-block w3-light-grey w3-card" style="margin-left:30px; box-shadow: 10px 10px 5px grey; top: 100px;">
+  <h5 class="w3-bar-item">Observabilities</h5>
+  <button class="w3-bar-item w3-button tablink" onclick="openCity(event, 'CloudFoundry')">CloudFoundry</button>
+  <button class="w3-bar-item w3-button tablink" onclick="openCity(event, 'Application')"> Application </button>
+  <button class="w3-bar-item w3-button tablink" onclick="openCity(event, 'Impact statement')"> Impact Statement</button>
+  <button class="w3-bar-item w3-button tablink" onclick="openCity(event, 'NDC status')"> NDC status</button>
+  <button class="w3-bar-item w3-button tablink" onclick="openCity(event, 'Dependency journey')"> Dependency journey </button>
+  <button class="w3-bar-item w3-button tablink" onclick="openCity(event, 'Failure rate')"> Failure rate </button>
+  <button class="w3-bar-item w3-button tablink" onclick="openCity(event, 'Load by apps')"> Load by apps </button>
+  <button class="w3-bar-item w3-button tablink" onclick="openCity(event, 'Past Outages')"> Past Outages </button>
+</div>
+
+<div style="margin-left:300px;">
+  <div class="w3-padding"> EA_000311916 </div>
+
+  <div id="CloudFoundry" class="w3-container city" style="display:none;">
+    <h2>AMW2-G2 site is down</h2>
+    <p>Start time - 8:20 AM EST.</p>
+    <p>AMW2-G2 site console page is down and observing increased in request/sec for the site go routers.</p>
+
+<img src="labweek3.PNG" alt="journeymap" usemap="#journeymap">
+
+<map name="journeymap">
+  <area shape="rect" coords="34,44,270,350" alt="journeymap" href="https://reea-cloudmon-grafana-1.monitoring.comcast.net:3000/d/u-Hs9fUVz/reea-eats-cloud-foundry-router-response-dashboard?orgId=1">
+</map>
+<p> </p>
+
+<img src="labweek4.PNG" alt="journeymap" usemap="#journeymap">
+
+<map name="journeymap">
+  <area shape="rect" coords="34,44,270,350" alt="journeymap" href="https://reea-cloudmon-grafana-1.monitoring.comcast.net:3000/d/u-Hs9fUVz/reea-eats-cloud-foundry-router-response-dashboard?orgId=1">
+</map>
+
+  </div>
+
+  <div id="Application" class="w3-container city" style="display:none">
+    <h2>Multiple services are impacted</h2>
+    <p> Received following alerts due to major outage:
+       <br>impacted app1: AIQ-channel-service
+        <br>impacted app2:VA convoy cms service
+       <br> impacted app3: ce-convoy-account-load-service
+       <br> impacted app4: Einstein account load
+      <br>  impacted app5: ITG
+       <br> impacted app6: Tech30-techstatus </p>
+<hr>
+    <p><a href="https://etwiki.sys.comcast.net/display/CNOCL1ASD/Cloud+Foundry+region+wise+application+list">List of Possible application impacted!</a></p> 
+    <p>Request the impacted app team to failover/ disable AMW2-G2 site.</p>
+    <img src="labweek5.PNG" alt="appslist" usemap="#appslist">
+
+<map name="appslist">
+  <area shape="rect" coords="34,44,270,350" alt="appslist" href="https://etwiki.sys.comcast.net/pages/viewpage.action?spaceKey=CNOCL1ASD&title=Cloud+Foundry+region+wise+application+list">
+</map>
+<p> </p>
+  </div>
+
+  <div id="Impact statement" class="w3-container city" style="display:none">
+    <h2>Raise the incident to SEV3</h2>
+    <p>Short description - Multiple applications are facing issue in AMW2-G2 site</p>
+    <p>Post the message in PMR-WARroom slack for wider communcation.</p>
+    <img src="labweek6.PNG" alt="impactapp" usemap="#impactapp">
+    <p> </p>
+  </div>
+  
+  <div id="NDC status" class="w3-container city" style="display:none">
+    <h2>All National Datacenter sites are Up</h2>
+    <p>No DataCenter device was down in last 24 hrs </p>
+    <p style="color:green;">Hillsboro - Green </p>
+    <p style="color:green;">Potomac - Green </p>
+    <p style="color:green;">Westchester - Green </p>
+    <p style="color:green;">Chicago - Green </p>
+    <p style="color:green;">Ashburn - Green </p>
+  </div>
+  
+  <div id="Dependency journey" class="w3-container city" style="display:none">
+    <h2>Dependency journey</h2>
+    <p>Here you find the Cloud Foundry Infrastructure dependency mapping and Site architecture</p>
+    <img src="labweek7.PNG" alt="dependency" usemap="#dependency">
+    <br>
+<hr>
+    <img src="labweek8.PNG" alt="dependencymap" usemap="#dependencymap">
+  </div>
+
+  <div id="Failure rate" class="w3-container city" style="display:none">
+    <h2> Here you can view failure rate for each individual application </h2>
+  <div class="search-container">
+      <input type="text" placeholder="Search.." name="search">
+  </div>
+  <hr>
+  <br>
+      <img src="labweek9.PNG" alt="failure" usemap="#failure">
+
+<map name="failure">
+  <area shape="rect" coords="34,44,270,350" alt="appslist" href="https://ce-convoy-prod-grafana-1.monitoring.comcast.net:3000/d/nMsclagIk/convoy-l1-5-triaging-dashboard?var-appname=All&var-backend=All&var-location=All&from=1695402000000&to=1695412799000&orgId=1">
+</map>
+<p> </p>
+    </div> 
+    
+    <div id="Load by apps" class="w3-container city" style="display:none">
+    <h2> Displaying individual application's DataCenter load and its error </h2>
+    <div class="search-container">
+      <input type="text" placeholder="Search.." name="search">
+  </div>
+     <hr>
+  <br>
+      <img src="labweek10.PNG" alt="load" usemap="#load">
+
+<map name="load">
+  <area shape="rect" coords="34,44,270,350" alt="appslist" href="https://ce-convoy-prod-grafana-1.monitoring.comcast.net:3000/d/nMsclagIk/convoy-l1-5-triaging-dashboard?var-appname=All&var-backend=All&var-location=All&from=1695402000000&to=1695412799000&orgId=1">
+</map>
+<p> </p>
+    </div> 
+  
+  <div id="Past Outages" class="w3-container city" style="display:none">
+    <h2> Past Outages Data </h2>
+        <p><a href="https://etwiki.sys.comcast.net/display/CNOCL1ASD/IncidentCommunicationHistoryData">Click to view the past outages and communication details</a></p> 
+    </div> 
+    
+</div>
+
+<script>
+function openCity(evt, cityName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-red", ""); 
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " w3-red";
+}
+</script>
+
+</body>
+</html>
